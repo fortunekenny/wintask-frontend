@@ -6,6 +6,7 @@ import {
   SignInPage,
   SignUpPage,
   Tasks,
+  CreateTask,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "tasks",
         element: <Tasks />,
         children: [
+          {
+            path: "createtask",
+            element: <CreateTask />,
+          },
           {
             path: "edittask",
             element: <EditTask />,

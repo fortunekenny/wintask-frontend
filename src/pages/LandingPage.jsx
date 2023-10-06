@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import Wrapper from "../assets/LandingPage";
+import { styled } from "styled-components";
 import { useState, useEffect } from "react";
 
 const LandingPage = () => {
@@ -32,6 +32,10 @@ const LandingPage = () => {
     </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  background: skyblue;
+`;
 
 export default LandingPage;
 /** 
