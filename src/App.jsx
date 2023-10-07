@@ -7,6 +7,8 @@ import {
   SignUpPage,
   Tasks,
   CreateTask,
+  UserPage,
+  Admin,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -29,16 +31,24 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "tasks",
-        element: <Tasks />,
+        path: "userpage",
+        element: <UserPage />,
         children: [
           {
-            path: "createtask",
+            index: true,
             element: <CreateTask />,
+          },
+          {
+            path: "tasks",
+            element: <Tasks />,
           },
           {
             path: "edittask",
             element: <EditTask />,
+          },
+          {
+            path: "admin",
+            element: <Admin />,
           },
         ],
       },
