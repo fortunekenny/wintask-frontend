@@ -7,9 +7,9 @@ const UserContext = createContext();
 
 const UserPage = () => {
   //temp
-  const user = { name: "paul" };
+  const user = { name: "paul", role: "founder" };
 
-  const [showAdmin, setShowAdmin] = useState(false);
+  //   const [showAdmin, setShowAdmin] = useState(false);
   // const [isDarkTheme, setIsDarkTheme] = useState(false);
   //   const toggleDarkTheme = () => {
   //     console.log("toggle dark theme");
@@ -19,7 +19,7 @@ const UserPage = () => {
   };
 
   return (
-    <UserContext.Provider value={{ user, showAdmin, setShowAdmin, logoutUser }}>
+    <UserContext.Provider value={{ user, logoutUser }}>
       <Wrapper>
         <h2>UserPage</h2>
         <div>

@@ -3,7 +3,6 @@ import { useUserContext } from "./UserPage";
 
 const Admin = () => {
   const data = useUserContext();
-  console.log(data);
 
   return (
     <Wrapper>
