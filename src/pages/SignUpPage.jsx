@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Form, Link, redirect, useNavigation } from "react-router-dom";
 import { styled } from "styled-components";
 import { FormRow } from "../components";
+
+export const action = async (data) => {
+  console.log(data);
+  return null;
+};
 
 const SignUpPage = () => {
   return (
     <Wrapper>
-      <form action="">
+      <Form method="post" className="">
         <h4>Register</h4>
         <FormRow type="text" name="name" labelText="name" defaultValue="kent" />
         <FormRow
@@ -20,10 +25,10 @@ const SignUpPage = () => {
           labelText="password"
           defaultValue="secret"
         />
-      </form>
-      <button type="submit" className="">
-        submit
-      </button>
+        <button type="submit" className="">
+          submit
+        </button>
+      </Form>
       <p>
         Already a member?
         <Link to="/signin" className="">

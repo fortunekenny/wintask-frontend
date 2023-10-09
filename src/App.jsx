@@ -11,6 +11,8 @@ import {
   Admin,
 } from "./pages";
 
+import { action as signupAction } from "./pages/SignUpPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +29,7 @@ const router = createBrowserRouter([
           {
             path: "signup",
             element: <SignUpPage />,
+            action: signupAction,
           },
         ],
       },
