@@ -12,6 +12,7 @@ import {
 } from "./pages";
 
 import { action as signupAction } from "./pages/SignUpPage";
+import { action as signinAction } from "./pages/SignInPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
           {
             path: "signin",
             element: <SignInPage />,
+            action: signinAction,
           },
           {
             path: "signup",
