@@ -13,6 +13,7 @@ import {
 
 import { action as signupAction } from "./pages/SignUpPage";
 import { action as signinAction } from "./pages/SignInPage";
+import { loader as userpageLoader } from "./pages/UserPage";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
       {
         path: "userpage",
         element: <UserPage />,
+        loader: userpageLoader, // loaders ar used to get data from the backend
         children: [
           {
             index: true,
