@@ -1,8 +1,10 @@
-import { Outlet, redirect, useLoaderData } from "react-router-dom";
+import { Outlet, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import { Navbar } from "../components";
 import { createContext, useContext } from "react";
 import customFetch from "../utils/customFetch";
+// import { Toast } from "react-toastify/dist/components";
+import { toast } from "react-toastify";
 
 export const loader = async () => {
   // loaders ar used to get data from the backend
@@ -11,7 +13,7 @@ export const loader = async () => {
     return data;
   } catch (error) {
     console.log(error);
-    return null;
+    return error;
     // return redirect("/");
   }
 };
@@ -21,6 +23,7 @@ const UserContext = createContext();
 const UserPage = () => {
   const data = useLoaderData();
   console.log(data);
+  const navigate = useNavigate();
 
   //temp
   const user = { name: "paul", role: "founder" };
@@ -32,7 +35,9 @@ const UserPage = () => {
   //   };
 
   const logoutUser = async () => {
-    console.log("logout user");
+    navigate("/");
+    await customFetch.get("/auth/logout");
+    toast.success("Logging out.......");
   };
 
   return (
